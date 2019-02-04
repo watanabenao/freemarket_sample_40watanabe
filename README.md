@@ -24,7 +24,7 @@
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |profile|text||
-|avator|string||
+|avatar|string||
 |birthday|date|null: false|
 |postal_code|string||
 |prefecture|integer|null: false|
