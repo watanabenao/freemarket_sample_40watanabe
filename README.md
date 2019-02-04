@@ -12,7 +12,7 @@
 - has_one :credit_card
 - has_many :products, dependent: :destroy
 - has_many :likes, dependent: :destroy
-- has_many :liked_products, throuth: :likes, source: :product
+- has_many :products, throuth: :likes
 
 
 ## profilesテーブル
@@ -65,7 +65,8 @@
 |saler|string|null: false|
 |buyer|string||
 |category|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true,|
+|brand|references|foreign_key: true|
+|likes_count|integer||
 
 ### Association
 - belongs_to :saler, class_name: "User"
@@ -74,7 +75,7 @@
 - belongs_ to :brand
 - has_many :product_images
 - has_many :likes
-- has_many :liked_users, through: :likes, source: :user 
+- has_many :users, through: :likes
 
 ## product_imagesテーブル
 
@@ -84,7 +85,7 @@
 |product|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :products
+- belongs_to :product
 
 ## brandsテーブル
 
@@ -104,6 +105,8 @@
 
 ### Association
 - has_many :products
+- belongs_to :parent, class_name: :Category
+- has_many :children, class_name: :Category, foreign_key: :parent_id
 
 ## likesテーブル
 
@@ -113,5 +116,5 @@
 |product|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belongs_to :user
+- belongs_to :product, counter_chache: likes_count
