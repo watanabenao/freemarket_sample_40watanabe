@@ -6,24 +6,35 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |phone_num|string|null: false|
+
+### Association
+- has_one :profile
+- has_one :credit_card
+- has_many :products, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :liked_products, throuth: :likes, source: :product
+
+
+## profilesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |profile|text||
-|profile_img|string||
+|avator|string||
 |birthday|date|null: false|
 |postal_code|string||
 |prefecture|integer|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building|string||
+|user|references|null: false, foreign_key: true|
 
 ### Association
-- has_one :credit_card
-- has_many :products, dependent: :destroy
-- has_many :likes, dependent: :destroy
-- has_many :liked_products, throuth: :likes, source: :product
+- belongs_to :user
 
 
 ## credit_cardsテーブル
