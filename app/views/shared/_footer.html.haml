@@ -5,16 +5,16 @@
       %p 今すぐ無料ダウンロード！
       .app-banner_icon.clearfix
         %figure
-          =image_tag "mercari_icon.png",:width => "68"
+          =image_tag "mercari_icon.png",width: "68"
         %ul.clearfix
           %li
-            =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8",:target=>["_blank"] do
-              =image_tag "app-store.svg",:width => "133",:height => "40"
+            =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8",target: ["_blank"] do
+              =image_tag "app-store.svg", width: 133,height: 40
           %li
-            =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja",:target=>["_blank"] do
-              =image_tag "google-play.svg",:width => "133",:height => "40"
+            =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: ["_blank"] do
+              =image_tag "google-play.svg",width: 133, height:40
     %figure.app-banner__img
-      = image_tag "download_content_pc.png",:width => "300"
+      = image_tag "download_content_pc.png", width: 300
 
 %footer.footer
   %nav
@@ -92,17 +92,18 @@
         %ul.footer__nav--lang
           %li
             =link_to "https://www.mercari.com/" do
-              =image_tag "flag_us.png",:width => "22",:height => "22"
+              =image_tag "flag_us.png", width: 22, height: 22
               United States
           %li
             =link_to "https://www.mercari.com/uk/" do
-              =image_tag "flag_uk.png",:width => "22",:height => "22"
+              =image_tag "flag_uk.png", width: 22 , height: 22
               United Kingdom
           %li
             =link_to "#",{class: "active"} do
-              =image_tag "flag_jp.png",:width => "22",:height => "22"
+              =image_tag "flag_jp.png", width: 22 , height: 22
               日本
   =link_to "#",{class: "footer__logo"} do
-    =image_tag "logo-white.svg",:width => "124",:height => "33"
+    =image_tag "logo-white.svg", width: 124 , height: 33
   %p.footer__copy-right 
     %small© 2019 Merucari
+
