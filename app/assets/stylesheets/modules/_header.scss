@@ -1,0 +1,121 @@
+header{
+  width: 100%;
+  background-color: $white;
+
+  .header__container{
+    width: 1020px;
+    margin: 0 auto;
+    padding-top: 8px
+  }
+  .header__top{
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__logo{
+    width: 136px;
+    height: 36px;
+  }
+
+  .header__search-products{
+    position: relative;
+  }
+
+  input.search__form{
+    box-sizing: border-box;
+    width: calc(1020px - (134px + 16px));
+    height: 36px;
+    padding: 9px 32px 9px 8px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+
+    &::placeholder{
+      font-size: 16px;
+    }
+  }
+
+  .search__icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .header__nav{
+    margin-top: 8px;
+    height: 38px;
+  }
+  .clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  .nav__left{
+    float: left;
+
+    ul{
+      display: flex;
+
+     .nav__root h2{
+        line-height: 38px;
+     }
+     .nav__root:last-child{
+        margin-left: 16px;
+     }
+    }
+  }
+
+  .nav__right{
+    float: right;
+
+    ul{
+      display: flex;
+
+      li{
+        box-sizing: border-box;
+       
+        a.btn{
+          display: block;
+          height: 30px;
+          padding: 0 10px;
+          border: 1px solid;
+          border-radius: 5px;
+          color: $white;
+          text-decoration: none;
+          line-height: 32px;
+          text-align: center;
+
+          &--red{
+            border-color: $red;
+            background-color: $red;
+          }
+
+          &--blue{
+            margin-left: 10px;
+            border-color: $blue;
+            color: $blue;
+
+            &:hover{
+              background-color: $blue;
+              color: $white;
+              transition: background-color 0.5s;
+
+            }
+
+          }
+        }
+      }
+
+      
+    }
+
+
+
+
+  }
+
+}
