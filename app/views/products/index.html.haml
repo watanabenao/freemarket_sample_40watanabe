@@ -1,0 +1,34 @@
+= render "shared/sell-btn"
+= render "shared/header"
+
+%main
+  %section.main__banner
+    .banner__stage
+      .banner__item
+        =link_to "","#",{class: "banner__item--hobby"} 
+         
+  .main__new-products
+    %section.main__pickup-products
+      %h2 ピックアップカテゴリー
+      %section.new-products  
+        = render partial: "products", locals: {category: "レディース"}
+      %section.new-products
+        = render partial: "products", locals:  { category: "メンズ"}
+      %section.new-products
+        = render partial: "products", locals:  { category: "ベビー・キッズ"}
+      %section.new-products
+        = render partial: "products", locals:  { category: "コスメ・香水・美容"}
+
+
+    %section.main__pickup-products
+      %h2 ピックアップブランド
+      %section.new-products
+        = render partial: "products", locals:  { category: "シャネル"}
+      %section.new-products
+        = render partial: "products", locals:  { category: "ルイヴィトン"} 
+      %section.new-products
+        = render partial: "products", locals:  { category: "シュプリーム"}
+      %section.new-products
+        = render partial: "products", locals:  { category: "ナイキ"}
+
+= render "shared/footer" 

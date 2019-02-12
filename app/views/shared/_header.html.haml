@@ -1,0 +1,27 @@
+%header
+  .header__container
+    .header__top
+      %h1.header__logo
+        = link_to "#" do
+          = image_tag "logo.svg"
+      .header__search-products
+        =form_tag do
+          %input{placeholder: "キーワードから探す", type: "text", class: "search__form"}
+          = fa_icon "search", class: "search__icon"
+    .header__nav
+      %nav.clearfix
+        .nav__left
+          %ul
+            %li.nav__root
+              %h2 カテゴリーから探す
+            %li.nav__root
+              %h2 ブランドから探す
+        .nav__right
+          %ul
+            %li
+              =link_to("#", class: "btn btn--red") do
+                ログイン
+            %li.btn
+              =link_to("#", class: "btn btn--blue") do
+                新規会員登録
+                

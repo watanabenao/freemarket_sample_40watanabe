@@ -1,0 +1,167 @@
+.app-banner{
+  background: url("back-image.png");
+  background-position: center;
+
+  &__content{
+    position: relative;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+  }
+
+  &__inner{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 420px;
+
+    h2{
+      color: $white;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.4; 
+    }
+
+    p{
+      margin-top: 10px;
+      color: $white;
+      font-size: 35px;
+    }
+
+    .app-banner_icon{
+      margin-top: 20px;
+      @include clearfix();
+
+
+      figure{
+        float: left;
+        margin: 0 0 0 0;
+      }
+
+      ul{
+        float: left;
+        margin-left:24px;
+        line-height: 69px;
+        @include clearfix();
+
+        li{
+          float: left;
+        }
+        
+        li:last-child{
+          margin: 0 0 0 16px;
+        }
+
+        a{
+          display: block;
+          line-height: 68px;
+        }
+
+        img{
+          vertical-align: middle;
+
+          &:hover{
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+  &__img {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+.footer{
+  padding: 60px 0;
+  background-color: #212121;
+  text-align: center;
+
+  nav{
+    width: 1020px;
+    margin: 0 auto;
+  }
+
+  ul{
+    font-size: 0;
+  }
+
+  &__container{
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    margin: 0 2% 0 0;
+    color: $white;
+
+    li{
+      margin-top: 16px;
+
+      &:first-child{
+        margin-top: 24px;
+      }
+    }
+    a{
+      color: $white;
+      font-size: 14px;
+      text-decoration: none;
+
+      &:hover{
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__head{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  &__nav--lang{
+    
+    a{
+      opacity: 0.3;
+      vertical-align: top;
+
+      &:hover{
+        opacity: 0.3;
+      }
+    }
+
+    a.active{
+      opacity: 1.0;
+
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__logo{
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+
+  &__copy-right{
+    margin-top: 8px;
+    color: $white;
+    text-align: center;
+
+  }
+}
+
+
+
