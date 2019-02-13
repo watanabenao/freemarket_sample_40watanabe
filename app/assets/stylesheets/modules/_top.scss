@@ -13,11 +13,24 @@ main{
 
         a{
           display: block;
+          width: 100%;
           height: 100%;
         }
 
         &--hobby{
           background-image: url(/images/banner-featured-hobby.jpg);
+        }
+
+        &--fortune{
+          background-image: url(/images/banner-hajimeru-fortune.jpg);
+        }
+
+        &--heisei{
+          background-image: url(/images/banner-bokurano-heisei.jpg);
+        }
+
+        &--start{
+          background-image: url(/images/banner-bokurano-heisei-entertainment.png);
         }
       }
     }
