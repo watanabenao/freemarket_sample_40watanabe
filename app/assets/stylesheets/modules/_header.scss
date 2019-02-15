@@ -47,75 +47,117 @@ header{
   .header__nav{
     margin-top: 8px;
     height: 38px;
-  }
-  .clearfix::after{
-    content: "";
-    clear: both;
-    display: block;
-  }
 
-  .nav__left{
-    float: left;
+    nav{
+      @include clearfix();
 
-    ul{
-      display: flex;
+      .nav__left{
+        float: left;
 
-     .nav__root h2{
+        ul{
+          display: flex;
+
+          li{
+            padding-left: 16px;
+
+            &:first-child{
+              padding-left: 0;
+            }
+          }
+          }
+        }
+
+      .nav__root {
+        color: $black;
+        text-decoration: none;
         line-height: 38px;
-     }
-     .nav__root:last-child{
-        margin-left: 16px;
-     }
-    }
-  }
 
-  .nav__right{
-    float: right;
 
-    ul{
-      display: flex;
+        &:hover{
+          color: $blue;
+        }
 
-      li{
-        box-sizing: border-box;
-       
-        a.btn{
-          display: block;
-          height: 30px;
-          padding: 0 10px;
-          border: 1px solid;
-          border-radius: 5px;
-          color: $white;
-          text-decoration: none;
-          line-height: 32px;
-          text-align: center;
+        }
 
-          &--red{
-            border-color: $red;
-            background-color: $red;
+      }
+
+
+      .nav__right{
+        float: right;
+
+        ul{
+          display: flex;
+
+          &.user__login--nav{
+            display: none;
+
+            li{
+              box-sizing: border-box;
+              height: 100%;
+             
+              a.btn{
+                display: block;
+                padding: 0 10px;
+                border: 1px solid;
+                border-radius: 5px;
+                color: $white;
+                text-decoration: none;
+                line-height: 32px;
+                text-align: center;
+
+                &--red{
+                  border-color: $red;
+                  background-color: $red;
+                }
+
+                &--blue{
+                  margin-left: 10px;
+                  border-color: $blue;
+                  color: $blue;
+
+                  &:hover{
+                    background-color: $blue;
+                    color: $white;
+                    transition: background-color 0.5s;
+                  }
+                }
+              }
+            }
           }
 
-          &--blue{
-            margin-left: 10px;
-            border-color: $blue;
-            color: $blue;
+          &.user__mypage-nav{
 
-            &:hover{
-              background-color: $blue;
-              color: $white;
-              transition: background-color 0.5s;
+            li.user__mypage-li{
+               padding-left: 16px;
 
+              &:first-child{
+                padding-left: 0;
             }
 
+              div{
+                display: inline-block;
+                vertical-align: top;
+                height: 38px;
+                line-height: 38px;
+
+                &.user__mypage--avater img{
+                  border-radius: 50%;
+
+                }
+
+                &.user__mypage--todo{
+                  width: 21px;
+
+                  .check-icon{
+                    font-size: 21px; 
+                }
+              }
+            }
           }
         }
       }
-
-      
     }
-
-
-
-
   }
-
 }
+
+

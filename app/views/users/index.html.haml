@@ -1,0 +1,103 @@
+= render "shared/header"
+= render "shared/sell-btn"
+
+= render "shared/nav"
+%main.mypage-contents.clearfix
+  = render "shared/mypage-side"
+  .mypage__main
+    %section.mypage__user
+      =link_to "" do
+        .user__avater
+          =image_tag "avater.png", width: 60
+        %h3 user_name
+        .user__value
+          %div
+            評価
+            %span 1
+          %div
+            出品数
+            %span 0
+    %section.mypage__notification-todo
+      %ul.mypage__tabs
+        %li.active
+          =link_to "#" do
+            %h3 お知らせ
+        %li 
+          =link_to "#" do
+            %h3 やることリスト
+      .mypage__contents
+        %ul.mypage__list
+          %li
+            =link_to "#", class: "notification__link" do
+              %figure
+                =image_tag "mercari_profile.png", width: 48
+              .mypage__list--body
+                .body__text
+                  事務局から個別メッセージ「【重要】新サービスに伴う利用規約改定のお知らせ」
+                %time
+                  =fa_icon "clock-o"
+                  %span １時間前
+              =fa_icon "angle-right", class: "arrow"
+          %li
+            =link_to "#", class: "mypage__list--link" do
+              %figure
+                =image_tag "mercari_profile.png", width: 48
+              .mypage__list--body
+                .body__text
+                  事務局から個別メッセージ「【重要】新サービスに伴う利用規約改定のお知らせ」
+                %time
+                  =fa_icon "clock-o"
+                  %span １時間前
+              =fa_icon "angle-right", class: "arrow"
+          %li
+            =link_to "#", class: "mypage__list--link" do
+              %figure
+                =image_tag "mercari_profile.png", width: 48
+              .mypage__list--body
+                .body__text
+                  事務局から個別メッセージ「【重要】新サービスに伴う利用規約改定のお知らせ」
+                %time
+                  =fa_icon "clock-o"
+                  %span １時間前
+              =fa_icon "angle-right", class: "arrow"
+          %li
+            =link_to "#", class: "mypage__list--link" do
+              %figuare
+                =image_tag "mercari_profile.png", width: 48
+              .mypage__list--body
+                .body__text
+                  事務局から個別メッセージ「【重要】新サービスに伴う利用規約改定のお知らせ」
+                %time
+                  =fa_icon "clock-o"
+                  %span １時間前
+              =fa_icon "angle-right", class: "arrow"
+          %li
+            =link_to "#", class: "mypage__list--link" do
+              %figure
+                =image_tag "mercari_profile.png", width: 48
+              .mypage__list--body
+                .body__text
+                  事務局から個別メッセージ「【重要】新サービスに伴う利用規約改定のお知らせ」
+                %time
+                  =fa_icon "clock-o"
+                  %span １時間前
+              =fa_icon "angle-right", class: "arrow"
+          %li.mypage__go-list
+            =link_to "#" do
+              一覧を見る
+
+      %section.mypage__tab
+        %h2 購入した商品
+        %ul.mypage__tabs
+          %li.active
+            =link_to "#" do
+              %h3 取引中
+          %li 
+            =link_to "#" do
+              %h3 過去の取引
+        .mypage__tab-content
+          %ul.no-transaction
+            %li
+              取引中の商品がありません
+              
+= render "shared/footer"

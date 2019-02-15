@@ -12,16 +12,37 @@
       %nav.clearfix
         .nav__left
           %ul
-            %li.nav__root
-              %h2 カテゴリーから探す
-            %li.nav__root
-              %h2 ブランドから探す
+            %li
+              %h2 
+                =link_to("#", class: "nav__root") do
+                  カテゴリから探す
+            %li
+              %h2 
+                =link_to("#", class: "nav__root") do
+                  ブランドから探す
         .nav__right
-          %ul
+          %ul.user__login--nav
             %li
               =link_to("#", class: "btn btn--red") do
                 ログイン
             %li.btn
               =link_to("#", class: "btn btn--blue") do
                 新規会員登録
+          %ul.user__mypage-nav
+            %li.nav__root.user__mypage-li
+              =link_to("#", class: "nav__root") do
+                .user__mypage--avater
+                  =image_tag "avater.png", width: 32
+                %div マイページ
+            %li.nav__root.user__mypage-li
+              =link_to("#", class: "nav__root") do
+                .user__mypage--notice
+                  =fa_icon "bell-o", class: "bell-icon"
+                %div お知らせ
+            %li.nav__root.user__mypage-li
+              =link_to("#", class: "nav__root") do
+                .user__mypage--todo
+                  =fa_icon "check", class: "check-icon"
+                %div やることリスト
+
                 
