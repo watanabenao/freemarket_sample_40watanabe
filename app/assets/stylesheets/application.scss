@@ -1,6 +1,6 @@
 @import "./reset";
 @import "font-awesome";
-@import "./mixin/clearfix";
+@import "./mixin/mixin";
 @import "./config/variable";
 @import "./modules/body";
 @import "./modules/sell-btn";
@@ -11,5 +11,6 @@
 @import "./modules/footer";
 @import "./modules/mypage";
 @import "./modules/side";
+@import "./modules/profile";
 @import "slick";
 @import "slick-theme";

@@ -1,0 +1,72 @@
+.profile{
+  background-color: $white;
+
+  &__head {
+    box-sizing: border-box;
+    height: 50px;
+    padding: 8px 24px;
+    border-bottom: 1px solid $background;
+    font-size:24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 33px;
+  }
+
+  &__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 72px 16px 24px;
+    background-image: url("/images/user-bg.jpg");
+    background-position: center;
+
+    figure{
+      width: 60px;
+      height: 60px;
+      margin: 0;
+    }
+  }
+
+  &__avater{
+    border-radius: 50%;
+  }
+
+  &__nickname{
+    box-sizing: border-box;
+    width: 220px;
+    height: 48px;
+    margin-left: 8px;
+    padding: 10px 16px 8px;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    font-size: 16px;
+
+    @include form-focus();
+  }
+
+  &__text{
+    padding: 40px 16px;
+
+    &--box{
+      box-sizing: border-box;
+      width: 668px;
+      min-height: 216px;
+      padding: 10px;
+      border: 1px solid $gray;
+      overflow: scroll;
+
+      @include form-focus();
+    }
+  }
+
+  &__edit-btn{
+    width: 668px;
+    height: 50px;
+    margin-top: 16px;
+    color: $white;
+    background-color: $red;
+    font-size: 14px;
+  }
+
+
+}
