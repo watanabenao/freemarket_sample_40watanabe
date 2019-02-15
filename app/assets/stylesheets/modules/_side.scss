@@ -5,10 +5,10 @@
 
   .mypage__nav{
 
-    &--lists ul{
+    &--lists{
 
       li{
-        a.mypage__nav--list{
+        a.list__link{
           box-sizing: border-box;
           position:  relative;
           display: block;
@@ -36,29 +36,25 @@
                 transform: translate(50%, 0);
                 color: $black;
                 font-weight: bold;
-
               }
             }
-          }
-
-        a.active {
-          border: none;
-          background-color: #eee;
-          font-weight: bold;
-
-          i{
-            color: $black;
+          &.active {
+            border: none;
+            background-color: #eee;
             font-weight: bold;
+
+            i{
+              color: $black;
+              font-weight: bold;
+            }
           }
         }
       }
     }
-    &--lists h3{
+    h3{
       margin: 40px 0 5px;
       font-size: 16px;
       font-weight: bold;
     }
   }
-
-
 }
