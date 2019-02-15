@@ -190,38 +190,31 @@
       }
     }
   }
-    section.mypage__tab{
-      margin-top: 40px;
-      h2{
-        box-sizing: border-box;
-        height: 72px;
-        padding: 0 16px; 
-        background-color: #fafafa;
+  section.mypage__tab{
+    margin-top: 40px;
+    h2{
+      box-sizing: border-box;
+      height: 72px;
+      padding: 0 16px; 
+      background-color: #fafafa;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 72px;
+    }
+    .mypage__tab-content{
+
+      li{
+        padding: 160px 0 60px 0;
+        background-color: $white;
+        background-image: url("/images/download_content_pc.svg");
+        background-position: center 40px;
+        background-repeat: no-repeat;
+        background-size: 78px 85px;
+        color: $gray; 
         font-size: 16px;
         font-weight: bold;
-        line-height: 72px;
+        text-align: center;
       }
-      .mypage__tab-content{
-
-        li{
-          padding: 160px 0 60px 0;
-          background-color: $white;
-          background-image: url("/images/download_content_pc.svg");
-          background-position: center 40px;
-          background-repeat: no-repeat;
-          background-size: 78px 85px;
-          color: $gray;
-          font-size: 16px;
-          font-weight: bold;
-          text-align: center;
-        }
-      }
+    }
   }
 }
-
-
-
-
-
-
-

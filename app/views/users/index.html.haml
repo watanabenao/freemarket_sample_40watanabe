@@ -20,15 +20,15 @@
     %section.mypage__notification-todo
       %ul.mypage__tabs
         %li.active
-          =link_to "" do
+          =link_to "#" do
             %h3 お知らせ
         %li 
-          =link_to "" do
+          =link_to "#" do
             %h3 やることリスト
       .mypage__contents
         %ul.mypage__list
           %li
-            =link_to "", class: "notification__link" do
+            =link_to "#", class: "notification__link" do
               %figure
                 =image_tag "mercari_profile.png", width: 48
               .mypage__list--body
@@ -39,7 +39,7 @@
                   %span １時間前
               =fa_icon "angle-right", class: "arrow"
           %li
-            =link_to "", class: "mypage__list--link" do
+            =link_to "#", class: "mypage__list--link" do
               %figure
                 =image_tag "mercari_profile.png", width: 48
               .mypage__list--body
@@ -50,7 +50,7 @@
                   %span １時間前
               =fa_icon "angle-right", class: "arrow"
           %li
-            =link_to "", class: "mypage__list--link" do
+            =link_to "#", class: "mypage__list--link" do
               %figure
                 =image_tag "mercari_profile.png", width: 48
               .mypage__list--body
@@ -61,7 +61,7 @@
                   %span １時間前
               =fa_icon "angle-right", class: "arrow"
           %li
-            =link_to "", class: "mypage__list--link" do
+            =link_to "#", class: "mypage__list--link" do
               %figuare
                 =image_tag "mercari_profile.png", width: 48
               .mypage__list--body
@@ -72,7 +72,7 @@
                   %span １時間前
               =fa_icon "angle-right", class: "arrow"
           %li
-            =link_to "", class: "mypage__list--link" do
+            =link_to "#", class: "mypage__list--link" do
               %figure
                 =image_tag "mercari_profile.png", width: 48
               .mypage__list--body
@@ -83,31 +83,21 @@
                   %span １時間前
               =fa_icon "angle-right", class: "arrow"
           %li.mypage__go-list
-            =link_to "" do
+            =link_to "#" do
               一覧を見る
 
       %section.mypage__tab
         %h2 購入した商品
         %ul.mypage__tabs
           %li.active
-            =link_to "" do
+            =link_to "#" do
               %h3 取引中
           %li 
-            =link_to "" do
+            =link_to "#" do
               %h3 過去の取引
         .mypage__tab-content
           %ul.no-transaction
             %li
               取引中の商品がありません
-
-
-　　　　　
-
-
-
-
-
-
-
-
+              
 = render "shared/footer"
