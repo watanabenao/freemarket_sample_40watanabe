@@ -1,0 +1,21 @@
+= render "shared/header"
+= render "shared/sell-btn"
+
+= render "shared/nav"
+%main.mypage-contents.clearfix
+  = render "shared/mypage-side"
+  .mypage__main
+    %section.profile
+      %h2.profile__head 
+        プロフィール
+      .profile__content
+        %figure 
+          =image_tag "avater.png",class: "profile__avater",width:  60
+        %input.profile__nickname
+      .profile__text
+        %textarea.profile__text--box
+        %button.profile__edit-btn{type: "submit"}
+          変更する
+
+              
+= render "shared/footer"

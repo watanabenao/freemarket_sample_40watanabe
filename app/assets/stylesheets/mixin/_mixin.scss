@@ -5,3 +5,10 @@
     clear: both;
   }
 }
+
+@mixin form-focus(){
+  &:focus{
+    border-color: $blue;
+    outline: 0;  
+  }
+}
