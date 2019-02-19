@@ -7,4 +7,7 @@ Rails.application.routes.draw do
    end
  end
 
+ resources :products, only: [:show]
+
 end
+
