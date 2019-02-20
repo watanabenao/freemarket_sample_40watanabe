@@ -1,0 +1,66 @@
+.product-box{
+  width: 213px;
+  margin-bottom: 20px;
+  background-color: $white;
+
+  &__img {
+    height: 220px;
+
+    img{
+      width: 213px;
+      height: 213px;
+      object-fit: cover;
+    }
+  }
+
+  &__body{
+    box-sizing: border-box;
+    height: 110px;
+    padding: 16px;
+  }
+
+  &__name{
+    display: block;
+    position: relative;
+    height: 3em;
+    font-size: 16px;
+    word-break: break-all;
+    line-height: 1.5em;
+    overflow: hidden;
+
+    &::after{
+      display: block;
+      content:"";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 1.5em;
+      background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
+    }
+  }
+
+  &__num{
+    margin-top: 8px;
+  }
+
+  &__num.clearfix{
+    @include clearfix();
+  }
+
+  &__price p{
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__likes{
+    float: right;
+    
+  }
+
+  &__tax{
+    font-size: 10px;
+    clear: both;
+  }
+}
