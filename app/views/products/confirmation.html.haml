@@ -1,0 +1,48 @@
+= render "shared/single-header"
+
+%main.confirmation
+  %section.confirmation__body
+    %h2.confirmation__confirm 購入を確定しますか？
+    %section.confirmation__content
+      .buy-content
+        %h3
+          = image_tag "/images/product-img.jpg"
+        %p.buy-content__name  猫も大好きなストーブです。暖かい冬になりますように。
+        %p.buy-content__price
+          ￥10,000
+          %span (送料込み)
+        .buy-content__point
+          ポイントはありません
+        %ul
+          %li.buy-content__pay
+            .buy-content__pay--cell 支払い金額
+            .buy-content__pay--cell 
+              %span ￥10,000
+        %button.buy-content__btn
+          購入する
+    %section.confirmation__content.confirmation__user
+      .user-info
+        %h3 配送先
+        %address.user-info__text
+          〒000-0000
+          %br
+          東京都××××区×××× ×-×-×
+          %br
+          メルカリ　花子
+        =link_to "#", class: "user-info__fix" do 
+          %span 変更する
+          = fa_icon "angle-right"
+    %section.confirmation__content.confirmation__user
+      .user-info
+        %h3 支払い方法
+        %p.user-info__text
+          *****************
+          %br
+          **/**
+        %figure
+          = image_tag "/images/visa.svg"
+        =link_to "#", class: "user-info__fix" do 
+          %span 変更する
+          = fa_icon "angle-right"
+
+= render "shared/single-footer"       
