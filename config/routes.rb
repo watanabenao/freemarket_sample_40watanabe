@@ -7,7 +7,11 @@ Rails.application.routes.draw do
    end
  end
 
- resources :products, only: [:show]
+ resources :products, only: [:show] do
+   member do
+    get 'confirmation'
+  end
+ end
 
 end
 
