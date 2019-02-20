@@ -248,6 +248,8 @@
         padding: 10px;
         border: 1px solid $gray;
         background-color: $background;
+
+        @include form-focus();
       }
 
       &--btn{
@@ -261,6 +263,7 @@
         font-size: 14px;
         text-align: center;
         cursor: pointer;
+
       }
     }
   }
