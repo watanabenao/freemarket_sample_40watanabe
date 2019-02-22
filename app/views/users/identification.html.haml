@@ -1,0 +1,66 @@
+= render 'shared/header'
+
+= render 'shared/nav'
+%main.mypage-contents.clearfix
+  = render 'shared/mypage-side'
+  .mypage__main
+    %section.user-info
+      %h2 本人情報の登録
+      = form_for "#", html: {class: "user-info__body"} do |f|
+        %div
+          %p 
+            お客さまの本人情報をご登録ください。
+            %br
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.text-right 
+            = link_to "#" do
+              本人確認書類のアップロードについて
+              = fa_icon "angle-right"
+        .user-info__box
+          %label
+            お名前
+          %p メルカリ花子
+        .user-info__box
+          %label
+            お名前カナ
+          %p メルカリハナコ
+        .user-info__box
+          %label
+            生年月日
+          %p 0000/00/00
+        .user-info__box
+          %label
+            郵便番号
+          %span.form-any 任意
+          = f.text_field :postal_code, class: "user-info__form", placeholder: "〇〇〇ー〇〇〇〇"
+        .user-info__box
+          %label
+            都道府県
+          %span.form-any 任意
+          .select-form
+            = f.select :prefecture, ["---", "北海道", "青森県", "岩手県"],{},{class: "user-info__form"}
+            = fa_icon "angle-down"
+        .user-info__box
+          %label
+            市区町村
+          %span.form-any 任意
+          = f.text_field :city, class: "user-info__form", placeholder: "〇〇市"
+        .user-info__box
+          %label
+            番地
+          %span.form-any 任意
+          = f.text_field :address, class: "user-info__form",placeholder: "〇〇ー〇〇"
+        .user-info__box
+          %label
+            建物名
+          %span.form-any 任意
+          = f.text_field :building, class: "user-info__form"
+        = f.submit "登録する", class: "user-info__btn"
+        .user-info__box
+          %p.text-right  
+            =link_to "#" do
+              本人情報の登録について
+              = fa_icon "angle-right"
+
+
+= render 'shared/footer'
