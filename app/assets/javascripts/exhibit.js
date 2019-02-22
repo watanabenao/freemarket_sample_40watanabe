@@ -13,6 +13,5 @@ $(document).on('turbolinks:load', function(){
       $('.commission__right').text(new Intl.NumberFormat('ja-JP',{style: 'currency', currency: 'JPY'}).format(commission));
       $('.profits__right').text(new Intl.NumberFormat('ja-JP',{style: 'currency', currency: 'JPY'}).format(profits));
     }
-
   })
 }); 
