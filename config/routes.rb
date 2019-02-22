@@ -7,7 +7,7 @@ Rails.application.routes.draw do
    end
  end
 
- resources :products, only: [:show] do
+ resources :products, only: [:show, :new] do
    member do
     get 'confirmation'
   end
