@@ -8,4 +8,7 @@ class ProductsController < ApplicationController
 
   def confirmation
   end
+
+  def new
+  end
 end

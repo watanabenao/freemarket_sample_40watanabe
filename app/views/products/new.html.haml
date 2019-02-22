@@ -1,0 +1,126 @@
+= render "shared/single-header"
+
+%main.exhibit
+  %section.exhibit__body
+    %h2.exhibit__form-title
+      商品の情報を入力
+    = form_for "#", html: {class: 'exhibit-form'} do |f|
+      .box.exhibit-form__img
+        %h3
+          商品画像
+          %span.form-require 必須
+        %p 最大10枚までアップロードできます。
+        .img-upload-box
+          .img-upload-box__container
+            .img-upload-box__items
+              %ul
+          .img-upload-box__form
+            %label.upload-label{for: "upload-box"}
+              = f.file_field :image, style: "display: none;", id: "upload-box"
+              .upload-box__form--box
+                %pre.visible-pc
+                  ドラッグアンドドロップ<br />またはクリックしてファイルをアップロード
+      .box.exhibit-form__name
+        .form-group
+          %label
+            商品名
+            %span.form-require 必須
+          %div
+            = f.text_field :name, class: "input-name", placeholder: "商品名(必須40文字まで)", maxlength: "40"
+        .form-group
+          %label
+            商品の説明
+            %span.form-require 必須
+          %div
+            = f.text_area :description, rows: "5", class: "input-description", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年ごろに1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000"
+      .box.exhibit-form__input.clearfix
+        %h3 商品の詳細
+        .sell-form
+          .form-group
+            %label
+              カテゴリー
+              %span.form-require 必須
+            .sell-form__body
+              = f.select :category_id, ["---", "レディース", "メンズ", "ベビー・キッズ"], {}, {class: "select-field"}
+              = fa_icon "angle-down"
+          .form-group
+            %label
+              商品の状態
+              %span.form-require 必須
+            .sell-form__body
+              = f.select :product_state, ["---", "新品・未使用", "未使用に近い", "目立った傷や汚れなし"], {}, {class: " select-field"}
+              = fa_icon "angle-down"
+      .box.exhibit-form__input
+        %h3 
+          配送について
+          =fa_icon "question-circle", class: "question-icon"
+        .sell-form
+          .form-group
+            %label
+              配送料の負担
+              %span.form-require 必須
+            .sell-form__body
+              = f.select :derivery_fee, ["---", "送料込み(出品者負担)", "着払い(購入者負担)"], {}, {class: "select-field"}
+              = fa_icon "angle-down"
+          .form-group
+            %label
+              発送元の地域
+              %span.form-require 必須
+            .sell-form__body
+              = f.select :shipping_area, ["---", "北海道", "青森県", "岩手県"], {}, {class: "select-field"}
+              = fa_icon "angle-down"
+          .form-group
+            %label
+              発送までの日数
+              %span.form-require 必須
+            .sell-form__body
+              = f.select :shipping_day, ["---", "1~2日で発送", "2~3日で発送", "4~7日で発送"], {}, {class: "select-field"}
+              = fa_icon "angle-down"
+
+      .box.exhibit-form__input
+        %h3 
+          販売価格(300~9,999,999)
+          =fa_icon "question-circle", class: "question-icon"
+        .sell-form
+          %ul
+            %li
+              .form-group
+                .form-group__price
+                  %label.form-group--left
+                    価格
+                    %span.form-require 必須
+                  .form-group--right
+                    ￥
+                    %div
+                      = f.text_field :price, class: "input-price", placeholder: "例）300"
+            %li.price-calc
+              .commission.flex
+                .commission__left
+                  販売手数料(10％)
+                .commission__right
+                  −
+            %li.price-calc
+              .profits.flex
+                .profits__left
+                  販売利益
+                .profits__right
+                  −
+      .box.exhibit-form__submit
+        .attention
+          %p 
+            = link_to "禁止されている出品", "#"
+            、
+            = link_to "行為", "#"
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売"
+            は犯罪であり処罰される可能性があります。
+          %p
+            また、出品をもちまして
+            = link_to "加盟店規約", "#"
+            に同意したことになります。
+        = f.submit "出品する", class: "exhibit-btn"
+        = link_to "もどる", "#", class: "return-btn"
+        
+= render "shared/single-footer"
