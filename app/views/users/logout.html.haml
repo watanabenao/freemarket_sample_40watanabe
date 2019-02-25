@@ -1,0 +1,13 @@
+= render 'shared/header'
+
+= render 'shared/nav'
+
+%main.mypage-contents.clearfix
+  = render 'shared/mypage-side'
+  .mypage__main
+    .logout-content
+      = link_to "#", class: "logout-btn" do
+        ログアウト
+= render 'shared/footer'
+
+= render 'shared/sell-btn'
