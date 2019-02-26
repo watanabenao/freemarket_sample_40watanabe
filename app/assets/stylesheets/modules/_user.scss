@@ -1,0 +1,92 @@
+// ボタンの共通事項
+.btn-default{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin : 8px 0 0 0;
+  border: 1px solid;
+  text-decoration: none;
+}
+
+
+.login{
+  width: 456px;
+  margin: 0 auto;
+  background-color: $white;
+  text-align: center;
+
+// 各ボタンの装飾
+  &__btn-blue{
+    border-color: $blue;
+    background-color: $blue;
+    color: $white;
+    line-height: 40px;
+  }
+
+  &__btn-fb{
+    position: relative;
+    border-color: #385185;
+    background-color: #385185;
+    color: $white;
+    line-height: 48px;
+
+    i{
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      font-size: 20px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__btn-goo{
+    margin: 16px 0 0 0;
+    border-color: #979797;
+    color: $black;
+    background-image: url(/images/google.svg);
+    background-repeat: no-repeat;
+    line-height: 48px;
+  }
+
+  &__btn-red{
+    border-color: $red;
+    background-color: $red;
+    color: $white;
+    line-height: 48px;
+  }
+
+// 新規登録
+  &__no-account{
+    padding: 40px 64px;
+
+  }
+// SNSでのログイン
+  &__sns{
+    padding: 32px 64px;
+    border-top: 2px solid $background;
+  }
+}
+
+.login-form{
+
+  &__inner{
+    padding: 24px 64px 32px;
+
+    .form-box{
+      margin-top: 24px;
+    }
+  }
+}
+
+.input-user-info{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 16px 8px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+
+  @include form-focus();
+}
+
