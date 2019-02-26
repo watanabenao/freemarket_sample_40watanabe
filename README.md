@@ -6,6 +6,11 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |phone_num|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birthday|date|null: false|
 
 ### Association
 - has_one :profile
@@ -19,13 +24,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|last_name|string|null: false|
-|first_name|string|null: false|
-|last_name_kana|string|null: false|
-|first_name_kana|string|null: false|
 |profile|text||
 |avatar|string||
-|birthday|date|null: false|
 |postal_code|string||
 |prefecture|integer|null: false|
 |city|string|null: false|
