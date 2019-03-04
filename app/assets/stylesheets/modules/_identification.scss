@@ -1,3 +1,42 @@
+.select-form{
+  position: relative;
+
+  i{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding-right: 16px;
+    color: #888;
+    font-size: 25px;
+    transform: translate(0, -50%);
+  }
+}
+
+.form-any{
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  background-color: $gray;
+  border-radius: 2px;
+  color: $white;
+  font-size: 12px;
+}
+
+
+.text-right{
+  text-align: right;
+
+  a{
+    color:  $blue;
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+      opacity: 0.7;
+    }
+  }
+}
+
+
 .user-info{
   background-color: $white;
 
@@ -20,20 +59,6 @@
       margin: 8px 0 0 0;
       line-height: 1.5;
     }
-
-    .text-right{
-      text-align: right;
-
-      a{
-        color:  $blue;
-        text-decoration: none;
-
-        &:hover{
-          text-decoration: underline;
-          opacity: 0.7;
-        }
-      }
-    }
   }
 
   &__box{
@@ -44,28 +69,6 @@
       font-weight: bold;
     }
 
-    .form-any{
-      margin: 0 0 0 8px;
-      padding: 2px 4px;
-      background-color: $gray;
-      border-radius: 2px;
-      color: $white;
-      font-size: 12px;
-    }
-  }
-
-  .select-form{
-    position: relative;
-
-    i{
-      position: absolute;
-      top: 50%;
-      right: 0;
-      padding-right: 16px;
-      color: #888;
-      font-size: 25px;
-      transform: translate(0, -50%);
-    }
   }
 
   &__form{

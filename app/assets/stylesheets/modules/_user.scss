@@ -1,14 +1,39 @@
 // ボタンの共通事項
 .btn-default{
+  position: relative;
   box-sizing: border-box;
   display: block;
   width: 100%;
   margin : 8px 0 0 0;
   border: 1px solid;
   text-decoration: none;
+  line-height: 48px;
+  
+  i{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    font-size: 20px;
+    transform: translate(0, -50%);
+  }
 }
 
+.btn-fb{
+  margin: 16px 0 0 0;
+  border-color: #385185;
+  background-color: #385185;
+  color: $white;
+}
 
+.btn-goo{
+  margin: 16px 0 0 0;
+  border-color: #979797;
+  color: $black;
+  background-image: url(/images/google.svg);
+  background-repeat: no-repeat;
+}
+
+// ログインページのCSS
 .login{
   width: 456px;
   margin: 0 auto;
@@ -23,36 +48,11 @@
     line-height: 40px;
   }
 
-  &__btn-fb{
-    position: relative;
-    border-color: #385185;
-    background-color: #385185;
-    color: $white;
-    line-height: 48px;
-
-    i{
-      position: absolute;
-      top: 50%;
-      left: 16px;
-      font-size: 20px;
-      transform: translate(0, -50%);
-    }
-  }
-
-  &__btn-goo{
-    margin: 16px 0 0 0;
-    border-color: #979797;
-    color: $black;
-    background-image: url(/images/google.svg);
-    background-repeat: no-repeat;
-    line-height: 48px;
-  }
 
   &__btn-red{
     border-color: $red;
     background-color: $red;
     color: $white;
-    line-height: 48px;
   }
 
 // 新規登録
@@ -64,6 +64,10 @@
   &__sns{
     padding: 32px 64px;
     border-top: 2px solid $background;
+
+    a:first-child{
+      margin: 0;
+    }
   }
 }
 
@@ -88,5 +92,41 @@
   line-height: 1.5;
 
   @include form-focus();
+}
+
+// サインアップのCSS
+.sing-up{
+  width: 700px;
+  margin: 0 auto;
+  background-color: $white;
+  text-align: center;
+
+  &__head{
+    padding: 32px 16px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &__inner{
+    padding: 64px;
+    border-top: 2px solid $background;
+  }
+
+  &__content{
+    width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.btn-mail{
+  position: relative;
+  display: block;
+  border: 1px solid #eee;
+  background-color: #eee;
+  color: $black;
+
+  i{
+    color: $gray;
+  }
 }
 
