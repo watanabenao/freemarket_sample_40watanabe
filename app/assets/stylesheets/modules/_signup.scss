@@ -1,0 +1,104 @@
+.hidden{
+  display: none;
+}
+
+
+.signup{
+  &__body{
+    box-sizing: border-box;
+    width: 700px;
+    margin: 0 auto;
+    background-color: $white;
+  }
+
+  &__title{
+    box-sizing: border-box;
+    padding: 32px 16px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__inner{
+    padding: 64px;
+    border-top: 2px solid $background;
+  }
+
+  &__content{
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  &__attention{
+    h3{
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &--p{
+      margin: 8px 0 0 0;
+      line-height: 1.5;
+    }
+  }
+
+  &__select{
+    margin: 8px 0 0 0;
+
+
+    &--body{
+      display: inline-block;
+      position: relative;
+      width: 50%;
+    } 
+
+    i{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      padding-right: 16px;
+      color: #888;
+      font-size: 20px;
+      transform: translate(0, -50%);
+    }
+
+    span{
+      margin: 0 8px;
+    }
+  }
+
+  &__info-text{
+    margin: 8px 0 0;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  &__btn{
+    width: 100%;
+    border: 1px solid $red;
+    background-color: $red;
+    color: $white;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+  }
+
+}
+
+
+.text-center{
+  text-align: center;
+
+  a{
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.submit-btn--red{
+  width: 100%;
+  border: 1px solid $red;
+  background-color: $red;
+  color: $white;
+  line-height: 48px;
+}
