@@ -23,14 +23,14 @@
         .nav__right
           %ul.user__login--nav
             %li
-              =link_to("#", class: "btn btn--red") do
+              =link_to(new_user_session_path, class: "btn btn--red") do
                 ログイン
             %li.btn
-              =link_to("#", class: "btn btn--blue") do
+              =link_to(signup_path, class: "btn btn--blue") do
                 新規会員登録
           %ul.user__mypage-nav
             %li.nav__root.user__mypage-li
-              =link_to("#", class: "nav__root") do
+              =link_to(users_path, class: "nav__root") do
                 .user__mypage--avater
                   =image_tag "avater.png", width: 32
                 %div マイページ
