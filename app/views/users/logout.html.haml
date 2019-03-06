@@ -6,8 +6,8 @@
   = render 'shared/mypage-side'
   .mypage__main
     .logout-content
-      = link_to destroy_user_session_path , class: "logout-btn" do
-        ログアウト
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn" 
+
 = render 'shared/footer'
 
 = render 'shared/sell-btn'

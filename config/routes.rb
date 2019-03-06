@@ -8,11 +8,15 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'signup', to: 'users/registrations#link'
-    get 'signup/registration', to: 'devise/registrations#new'
   end
 
 
  root 'products#index'
+
+ resources :profiles, only: [:create, :new] 
+
+ resources :credit_cards, only: [:create, :new] 
+
  resources :users, only: [:index,] do
    collection do
      get 'profile'
