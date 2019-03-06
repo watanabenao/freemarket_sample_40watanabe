@@ -1,7 +1,7 @@
 = render "signup-header"
 
 %main
-  = form_for "#", html: {class: 'signup__form'} do |f|
+  = form_for @user do |f|
     #signup__user-info.signup
       .signup__body
         %section
@@ -64,21 +64,13 @@
                 %label
                   生年月日
                   %span.form-require 必須
-                .signup__select
+                .signup__select.birthday
                   .signup__select--body
-                    = f.select "#",  ["--", "1900", "1901", "1902"], {}, {class: "select-field"}
-                    = fa_icon "angle-down"
-                  %span 年
-                .signup__select
-                  .signup__select--body
-                    = f.select "#",  ["--", "1", "2", "3"], {}, {class: "select-field"}
-                    = fa_icon "angle-down"
-                  %span 月
-                .signup__select
-                  .signup__select--body
-                    = f.select "#",  ["--"], {}, {class: "select-field"}
-                    = fa_icon "angle-down"
-                  %span 日
+                    = f.date_select :birthday,{use_month_numbers:true, start_year: 1900, end_year: 2019, include_blank: true}, {class: "select-field birthday__form"}
+                  %ul
+                    %li.birthday__date 年
+                    %li.birthday__date 月
+                    %li.birthday__date 日
                 %p.signup__info-text 
                   ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
@@ -112,8 +104,7 @@
               %p.signup__attention--p 
                 本人確認のため、携帯電話のSMS(ショートメールメッセージサービス)を利用して認証を行います。
             .form-group
-              #address-btn.signup__btn
-                次へ進む
+              = f.submit '次へ進む', class: "submit-btn--red", id: "address-btn"
               %p.signup__attention--p 
                 電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
             .form-group
@@ -121,125 +112,6 @@
                 =link_to "#" do
                   電話番号の確認が必要な理由
                   = fa_icon "angle-right"
-    #signup__address.signup.hidden
-      .signup__body
-        %section
-          %h2.signup__title 発送元・お届け先住所
-        .signup__inner
-          .signup__content
-            .form-group
-              %label
-                お名前
-              %span.form-require 必須
-              %div
-                = f.text_field :last_name, class: "user-info__form"
-              %div
-                = f.text_field :first_name, class: "user-info__form"
-            .form-group
-              %label  
-                お名前(カナ)
-              %span.form-require 必須
-              %div
-                = f.text_field :last_name_kana, class: "user-info__form"
-              %div
-                = f.text_field :first_name_kana, class: "user-info__form"
-            .form-group
-              %label  
-                郵便番号
-              %span.form-require 必須
-              %div
-                = f.text_field :postal_code, class: "user-info__form", placeholder: "例)123-4567"
-            .form-group
-              %label  
-                都道府県
-              %span.form-require 必須
-              .select-form
-                = f.select :prefecture, ["---", "北海道", "青森県", "岩手県"],{},{class: "user-info__form"}
-                = fa_icon "angle-down"
-            .form-group
-              %label  
-                市区町村
-              %span.form-require 必須
-              %div
-                = f.text_field :city, class: "user-info__form", placeholder: "例)横浜市緑区"
-            .form-group
-              %label  
-                番地
-              %span.form-require 必須
-              %div
-                = f.text_field :address, class: "user-info__form",placeholder: "例)青山1−1−1"
-            .form-group
-              %label
-                建物名
-              %span.form-any 任意
-              %div
-                = f.text_field :building, class: "user-info__form",placeholder: "例)柳ビル103"
-            .form-group
-              %label
-                電話
-              %span.form-any 任意
-              %div
-                = f.text_field :phone_num, class: "user-info__form",placeholder: "例)09012345678"
-            .form-group
-              #card-btn.signup__btn
-                次へ進む
-    #signup__card.signup.hidden
-      .signup__body
-        %section
-          %h2.signup__title 支払い方法
-        .signup__inner
-          .signup__content
-            .form-group
-              %label
-                カード番号
-                %span.form-require 必須
-              .card-info__form
-                = f.text_field :number, class: "input-card",placeholder: "半角数字のみ"
-              %ul.card-info__company
-                %li
-                  = image_tag "visa.svg", width: 49, height: 20
-                %li
-                  = image_tag "master-card.svg", width:34, height: 20
-                %li
-                  = image_tag "saison-card.svg", width: 30, height: 20
-                %li
-                  = image_tag "jcb.svg", width: 32, height: 20
-                %li
-                  = image_tag "american_express.svg", width: 21, height: 20
-                %li
-                  = image_tag "dinersclub.svg", width: 32, height: 20
-                %li
-                  = image_tag "discover.svg", width: 32, height: 20
-            .form-group
-              %label
-                有効期限
-                %span.form-require 必須
-              .card-info__select
-                .card-info__select--body
-                  = f.select :month, ["01", "02", "03", "04"], {}, {class: "select-field card-info__select--form"}
-                  = fa_icon "angle-down"
-                %span 月
-              .card-info__select
-                .card-info__select--body
-                  = f.select :year, ["19", "20", "21", "22"], {}, {class: "select-field card-info__select--form"}
-                  = fa_icon "angle-down"
-                %span 年
-            .form-group
-              %label
-                セキュリティコード
-                %span.form-require 必須
-              .card-info__form
-                = f.text_field :security_code, class: "input-card",placeholder: "カード背面４桁もしくは３桁の番号"
-              .card-info__form--question
-                %p#security-code 
-                  =fa_icon "question-circle", class: "question-icon"
-                  カード裏面の番号とは？
-                .security-code__description
-                  カードの裏面をご参照ください。
-                  %br
-                  = image_tag "seq-card.png", width: 240
-            .form-group
-              = f.submit '次へ進む', class: "submit-btn--red"
 
 = render "/shared/single-footer"
 

@@ -21,28 +21,30 @@
                 =link_to("#", class: "nav__root") do
                   ブランドから探す
         .nav__right
-          %ul.user__login--nav
-            %li
-              =link_to(new_user_session_path, class: "btn btn--red") do
-                ログイン
-            %li.btn
-              =link_to(signup_path, class: "btn btn--blue") do
-                新規会員登録
-          %ul.user__mypage-nav
-            %li.nav__root.user__mypage-li
-              =link_to(users_path, class: "nav__root") do
-                .user__mypage--avater
-                  =image_tag "avater.png", width: 32
-                %div マイページ
-            %li.nav__root.user__mypage-li
-              =link_to("#", class: "nav__root") do
-                .user__mypage--notice
-                  =fa_icon "bell-o", class: "bell-icon"
-                %div お知らせ
-            %li.nav__root.user__mypage-li
-              =link_to("#", class: "nav__root") do
-                .user__mypage--todo
-                  =fa_icon "check", class: "check-icon"
-                %div やることリスト
+          - if user_signed_in?
+            %ul.user__mypage-nav
+              %li.nav__root.user__mypage-li
+                =link_to(users_path, class: "nav__root") do
+                  .user__mypage--avater
+                    =image_tag "avater.png", width: 32
+                  %div マイページ
+              %li.nav__root.user__mypage-li
+                =link_to("#", class: "nav__root") do
+                  .user__mypage--notice
+                    =fa_icon "bell-o", class: "bell-icon"
+                  %div お知らせ
+              %li.nav__root.user__mypage-li
+                =link_to("#", class: "nav__root") do
+                  .user__mypage--todo
+                    =fa_icon "check", class: "check-icon"
+                  %div 
+          - else
+            %ul.user__login--nav
+              %li
+                =link_to(new_user_session_path, class: "btn btn--red") do
+                  ログイン
+              %li.btn
+                =link_to(signup_path, class: "btn btn--blue") do
+                  新規会員登録
 
                 

@@ -14,7 +14,7 @@
       = link_to "#", class: "btn-default btn-goo" do
         Googleでログイン
 
-    = form_for "#", html: {class: "login-form"} do |f|
+    = form_for @user, url: user_session_path, html: {class: "login-form"} do |f|
       .login-form__inner
         .form-group
           = f.text_field :email, class: "input-user-info", placeholder: "メールアドレス"
