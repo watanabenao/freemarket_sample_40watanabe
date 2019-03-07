@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @profile = Profile.new
   end
 
   def confirmation
