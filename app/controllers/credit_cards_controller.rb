@@ -3,9 +3,12 @@ class CreditCardsController < ApplicationController
   end
 
   def create
-    CreditCard.create(credit_card_params)
-
-    redirect_to signup_compleat_users_path
+    @card = CreditCard.new(credit_card_params)
+    if  @card.save
+      redirect_to signup_compleat_users_path
+    else
+      render :new
+    end
   end
 
   private

@@ -19,9 +19,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
 
-    redirect_to new_credit_card_path
+    if current_user.update(user_params)
+      redirect_to new_credit_card_path
+    else
+      render :edit
+    end
   end
 
   def signup_compleat
