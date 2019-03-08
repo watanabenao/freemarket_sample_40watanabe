@@ -29,7 +29,7 @@
         %h2.signup__title 発送元・お届け先住所
       .signup__inner
         .signup__content
-          = form_for @user, url: user_path, html: {class: 'signup__form'} do |f|
+          = form_for current_user, url: user_path, html: {class: 'signup__form'} do |f|
             .form-group.no-margin
               %label
                 お名前
