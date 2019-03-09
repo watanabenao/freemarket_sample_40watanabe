@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users,
   controllers: {
     sessions:'users/sessions',
-    registration: 'users/registrations'
+    registrations: 'users/registrations'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -17,12 +17,13 @@ Rails.application.routes.draw do
 
  resources :credit_cards, only: [:create, :new] 
 
- resources :users, only: [:index,] do
+ resources :users, only: [:index, :create, :edit, :update] do
    collection do
      get 'profile'
      get 'identification'
      get 'logout'
      get 'card'
+     get 'signup_compleat'
    end
  end
 

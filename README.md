@@ -11,6 +11,11 @@
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
+|postal_code|string|null: false|
+|prefecture|integer|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building|string||
 
 ### Association
 - has_one :profile
@@ -26,11 +31,6 @@
 |------|----|-------|
 |profile|text||
 |avatar|string||
-|postal_code|string||
-|prefecture|integer|null: false|
-|city|string|null: false|
-|address|string|null: false|
-|building|string||
 |user|references|null: false, foreign_key: true|
 
 ### Association

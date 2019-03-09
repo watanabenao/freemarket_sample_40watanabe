@@ -11,21 +11,11 @@ $(document).on('turbolinks:load',function(){
 
 
   $('#address-btn').on('click',function(){
-    $('#signup__tel-num').hide();
-    $('#signup__address').show();
-    $('html,body').animate({
-                scrollTop: 0
-            }, 10);
     $('.signup__tel-num').removeClass('active').addClass('through');
     $('.signup__address').toggleClass('active');
   });
 
   $('#card-btn').on('click',function(){
-    $('#signup__address').hide();
-    $('#signup__card').show();
-    $('html,body').animate({
-                scrollTop: 0
-            }, 10);
     $('.signup__address').removeClass('active').addClass('through');
     $('.signup__pay').toggleClass('active');
   });

@@ -1,4 +1,26 @@
-= render 'devise/registrations/signup-header'
+%header.single-header
+  %h1.signup-logo
+    = link_to root_path do 
+      = image_tag "logo.svg", width: 185
+  %nav.signup-bar
+    %ol
+      %li.signup__user-info.through
+        会員情報
+        .status.status__first
+      %li.signup__tel-num.through
+        電話番号入力
+        .status.status__progress
+      %li.signup__address.active
+        お届け先住所入力
+        .status.status__progress
+      %li.signup__pay
+        支払い方法
+        .status.status__progress
+      %li.signup__compleat
+        完了
+        .status.status__last
+
+
 
 %main
   #signup__address.signup
@@ -7,7 +29,7 @@
         %h2.signup__title 発送元・お届け先住所
       .signup__inner
         .signup__content
-          = form_for @user, html: {class: 'signup__form'} do |f|
+          = form_for current_user, url: user_path, html: {class: 'signup__form'} do |f|
             .form-group.no-margin
               %label
                 お名前
@@ -23,9 +45,7 @@
               %div
                 = f.text_field :last_name_kana, class: "user-info__form user-info__form--registered"
               %div
-                = f.text_field :first_name_kana, class: "user-info__form user-info__form--registered"
-                
-          = form_for @profile, html: {class: 'signup__form'} do |f|
+              = f.text_field :first_name_kana, class: "user-info__form user-info__form--registered"
             .form-group
               %label  
                 郵便番号
@@ -62,7 +82,7 @@
                 電話
               %span.form-any 任意
               %div
-                = f.text_field :sub_phone, class: "user-info__form",placeholder: "例)09012345678"
+                = f.text_field :phone_num, class: "user-info__form",placeholder: "例)09012345678"
             .form-group
               = f.submit '次へ進む', class: "submit-btn--red"
              
